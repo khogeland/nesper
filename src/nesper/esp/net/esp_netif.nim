@@ -29,5 +29,7 @@ else:
   export esp_netif_types
   export esp_eth_netif_glue
 
-  include esp_netif_impl
-  include esp_netif_defaults
+  import esp_netif_impl
+  export esp_netif_impl
+  import esp_netif_defaults
+  export esp_netif_defaults

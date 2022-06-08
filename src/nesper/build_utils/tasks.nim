@@ -74,13 +74,7 @@ proc parseNimbleArgs(): NimbleArgs =
   let wifi_ssid = getEnv("ESP_WIFI_SSID")
   let wifi_pass = getEnv("ESP_WIFI_PASS")
 
-  let wifidefs =
-    if wifi_ssid != "" and wifi_pass != "":
-      echo "...found env variables for wifi credentials"
-      "-d:WIFI_SSID=$1 -d:WIFI_PASS=$2 " % [wifi_ssid.quoteShell(), wifi_pass.quoteShell()]
-    else:
-      echo "note: no env variables found for wifi, set ESP_WIFI_SSID and ESP_WIFI_PASS to enable"
-      ""
+  let wifidefs = ""
 
   # TODO: make these configurable and add more examples...
   let
@@ -103,7 +97,7 @@ proc parseNimbleArgs(): NimbleArgs =
     esp32_template: esp32_template,
     app_template: app_template,
     # forceupdatecache = "--forceUpdateCache" in idf_args
-    esp_idf_version: "ESP_IDF_V4_0", # FIXME
+    esp_idf_version: "ESP_IDF_V4_4", # FIXME
     wifi_args: wifidefs,
     debug: "--esp-debug" in idf_args,
     forceclean: "--clean" in idf_args,
