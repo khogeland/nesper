@@ -28,6 +28,7 @@ type
     ADC_WIDTH_BIT_10 = 1,       ## !< ADC capture width is 10Bit
     ADC_WIDTH_BIT_11 = 2,       ## !< ADC capture width is 11Bit
     ADC_WIDTH_BIT_12 = 3,       ## !< ADC capture width is 12Bit
+    ADC_WIDTH_BIT_13 = 4,       ## !< ADC capture width is 13Bit
     ADC_WIDTH_MAX
 
 
@@ -49,15 +50,18 @@ const
   ADC_WIDTH_12Bit* = ADC_WIDTH_BIT_12
 
 type
+  # this is for the esp32s2
   adc1_channel_t* {.size: sizeof(cint).} = enum
-    ADC1_CHANNEL_0 = 0,         ## !< ADC1 channel 0 is GPIO36
-    ADC1_CHANNEL_1,           ## !< ADC1 channel 1 is GPIO37
-    ADC1_CHANNEL_2,           ## !< ADC1 channel 2 is GPIO38
-    ADC1_CHANNEL_3,           ## !< ADC1 channel 3 is GPIO39
-    ADC1_CHANNEL_4,           ## !< ADC1 channel 4 is GPIO32
-    ADC1_CHANNEL_5,           ## !< ADC1 channel 5 is GPIO33
-    ADC1_CHANNEL_6,           ## !< ADC1 channel 6 is GPIO34
-    ADC1_CHANNEL_7,           ## !< ADC1 channel 7 is GPIO35
+    ADC1_CHANNEL_0 = 0,       
+    ADC1_CHANNEL_1,           
+    ADC1_CHANNEL_2,           
+    ADC1_CHANNEL_3,           
+    ADC1_CHANNEL_4,           
+    ADC1_CHANNEL_5,           
+    ADC1_CHANNEL_6,           
+    ADC1_CHANNEL_7,           
+    ADC1_CHANNEL_8,           
+    ADC1_CHANNEL_9,           
     ADC1_CHANNEL_MAX
   adc2_channel_t* {.size: sizeof(cint).} = enum
     ADC2_CHANNEL_0 = 0,         ## !< ADC2 channel 0 is GPIO4
